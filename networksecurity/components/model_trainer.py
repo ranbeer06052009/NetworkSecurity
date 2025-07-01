@@ -26,9 +26,8 @@ from sklearn.ensemble import (
 import mlflow
 from urllib.parse import urlparse
 
-#import dagshub
-#import dagshub
-#dagshub.init(repo_owner='ranbeer06052009', repo_name='NetworkSecurity', mlflow=True)
+import dagshub
+dagshub.init(repo_owner='ranbeer06052009', repo_name='NetworkSecurity', mlflow=True)
 
 '''os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/krishnaik06/networksecurity.mlflow"
 os.environ["MLFLOW_TRACKING_USERNAME"]="krishnaik06"
@@ -175,7 +174,6 @@ class ModelTrainer:
                 test_arr[:, :-1],
                 test_arr[:, -1],
             )
-
             model_trainer_artifact=self.train_model(x_train,y_train,x_test,y_test)
             return model_trainer_artifact
 
